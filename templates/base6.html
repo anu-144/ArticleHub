@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+       {%block title%}
+
+       {%endblock title%}
+    </title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <h1>header</h1>
+    {%include "nav6.html" %}
+    {% block content %}
+    {% endblock content %}
+    <h1>footer</h1>
+
+    <button onclick="history.back()" id="backButton">⬅️ Go Back</button>
+
+    <script>
+        document.getElementById("searchButton").addEventListener("click", function() {
+            let searchValue = document.getElementById("searchInput").value.trim();
+            if (searchValue) {
+                window.location.href = "{% url 'contact6' %}" + "?search=" + encodeURIComponent(searchValue);
+            } else {
+                alert("Please enter a search term!");
+            }
+        });
+    </script>
+
+</body>
+</html>

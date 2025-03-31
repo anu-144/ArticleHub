@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <ul>
+        <li><a href="{% url 'home6' %}">HOME</a></li>
+        <li><a href="{% url 'about6' %}">ABOUT</a></li>
+        <li><a href="{% url 'contact6' %}">CONTACT</a></li>
+        <li class="search-container">
+            <form class="search-form" action="{% url 'contact6' %}" method="GET" onsubmit="return false;">
+                <input type="text" id="searchInput" name="search" placeholder="Search...">
+                <button type="button" id="searchButton">🔍</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+
+
+
+

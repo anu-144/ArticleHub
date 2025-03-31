@@ -1,0 +1,21 @@
+{% extends "base6.html" %}
+{% block title %}
+{{  title }}
+{% endblock title %}
+
+ {% block content %}
+ <h2>this is contact page🤗</h2>
+    {% for article in articles %}
+    <div class="article-card">
+        <h3>{{forloop.counter }} 
+            <a href="{% url 'article' article.id %}">{{article.article1}}</a>
+        </h3>
+        
+        {% if article.desc %}  
+            <p>{{ article.desc }}</p>
+        {% endif %}
+        <hr>
+    </div>
+    {% endfor %}
+
+{% endblock content %}
